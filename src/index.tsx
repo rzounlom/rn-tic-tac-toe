@@ -1,22 +1,18 @@
-import { Game, Home } from "@screens";
-import { StyleSheet, View } from "react-native";
+import { AppBootstrap, Text } from "@components";
+import React, { ReactElement } from "react";
 
-import React from "react";
+import { View } from "react-native";
+import styles from "./styles";
 
-export default function App() {
+export default function App(): ReactElement {
     return (
-        <View style={styles.container}>
-            <Home />
-            <Game />
-        </View>
+        <AppBootstrap>
+            <View style={styles.container}>
+                <Text style={{ fontSize: 25 }} weight="700" onPress={() => alert("true")}>
+                    Home
+                    <Text weight="400">Test</Text>
+                </Text>
+            </View>
+        </AppBootstrap>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center"
-    }
-});
